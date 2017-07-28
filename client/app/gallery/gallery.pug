@@ -1,0 +1,24 @@
+doctype html
+
+div(uib-carousel active='vm.active' interval='vm.interval' no-wrap='!vm.wrapSlides')
+  div(uib-slide, ng-repeat='slide in vm.slides track by slide._id', index='$index')
+    img(ng-src='{{slide.image}}')
+    .carousel-caption
+      h4 Slide {{$index}}
+      p {{slide.text}}
+
+.container
+  fieldset
+    legend Upload a new slide to carousel
+    form.form-horizontal
+      .form-group
+        label.control-label.col-sm-2 Desc
+        .col-sm-10
+          input.form-control(type='text', placeholder='image description', ng-model='text')
+      .form-group
+        label.control-label.col-sm-2 Image
+        .col-sm-10
+          input(type='file', ngf-select, name='file', ng-model='image')
+      .form-group
+        .col-sm-offset-2.col-sm-10
+          button.btn.btn-primary(type='submit' ng-click='vm.addSlide(text, image)') Upload

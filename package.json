@@ -20,6 +20,7 @@
     
     "core-js": "^2.2.1",
     "express": "^4.13.3",
+    "multer": "^1.3.0",
     "morgan": "^1.8.0",
     "body-parser": "^1.13.3",
     "method-override": "^2.3.5",
@@ -98,6 +99,7 @@
     "pug-html-loader": "^1.0.8",
     "awesome-typescript-loader": "^1.1.1",
     "ng-annotate-loader": "~0.1.0",
+    "ng-file-upload": "^12.2.13",
     "babel-loader": "^6.2.4",
     "css-loader": "^0.24.0",
     "file-loader": "^0.9.0",

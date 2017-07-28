@@ -6,6 +6,7 @@
 'use strict';
 import Thing from '../api/thing/thing.model';
 import User from '../api/user/user.model';
+import Slide from '../api/gallery/gallery.model';
 import config from './environment/';
 
 export default function seedDatabaseIfNeeded() {
@@ -61,6 +62,31 @@ export default function seedDatabaseIfNeeded() {
         })
         .then(() => console.log('finished populating users'))
         .catch(err => console.log('error populating users', err));
+      });
+
+    Slide.find({}).remove()
+      .then(() => {
+        Slide.create(
+          {
+            image: 'assets/images/mountain.jpg',
+            text: 'Nice image',
+            id: 0
+          }, {
+            image: 'assets/images/street.jpg',
+            text: 'Nice image',
+            id: 1
+          }, {
+            image: 'assets/images/cabin.jpg',
+            text: 'Nice image',
+            id: 2
+          },
+          {
+            image: 'assets/images/lotus.jpg',
+            text: 'Nice image',
+            id: 3
+          })
+          .then(() => console.log('finished populating slides'))
+          .catch(error => console.log('error populating slides', error));
       });
   }
 }

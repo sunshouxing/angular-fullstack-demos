@@ -25,12 +25,14 @@ import main from './main/main.component';
 import constants from './app.constants';
 import util from '../components/util/util.module';
 import socket from '../components/socket/socket.service';
+// import sub apps
+import gallery from './gallery/gallery.component';
 
 import './app.scss';
 
 angular.module('meanApp', [ngCookies, ngResource, ngSanitize, 'btford.socket-io', uiRouter,
   uiBootstrap, _Auth, account, admin, 'validation.match', navbar, footer, main, constants,
-  socket, util
+  socket, util, gallery
 ])
   .config(routeConfig)
   .run(function($rootScope, $location, Auth) {
