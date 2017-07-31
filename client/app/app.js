@@ -5,6 +5,7 @@ import angular from 'angular';
 import ngCookies from 'angular-cookies';
 import ngResource from 'angular-resource';
 import ngSanitize from 'angular-sanitize';
+import ngMaterial from 'angular-material';
 
 import 'angular-socket-io';
 
@@ -30,7 +31,7 @@ import './app.scss';
 
 angular.module('meanApp', [ngCookies, ngResource, ngSanitize, 'btford.socket-io', uiRouter,
   uiBootstrap, _Auth, account, admin, 'validation.match', navbar, footer, main, constants,
-  socket, util
+  socket, util, ngMaterial
 ])
   .config(routeConfig)
   .run(function($rootScope, $location, Auth) {
