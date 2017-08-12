@@ -16,11 +16,11 @@ div(layout='column', ng-cloak)
             ng-click='vm.selectUser(user)'
             ng-class='{"selected": user === vm.selected}'
           )
-            md-icon.avatar(md-svg-src='assets/svg/avatar-1.svg')
+            md-icon.avatar(md-svg-icon='{{user.avatar}}')
             | {{user.name}}
 
     //- container #4
     md-content#content(flex)
-      md-icon.avatar(md-svg-src='assets/svg/avatar-1.svg')
+      md-icon.avatar(md-svg-icon='{{vm.selected.avatar}}')
       h2 {{vm.selected.name}}
       | {{vm.selected.content}}
