@@ -10,10 +10,17 @@ export class UserController {
   /*@ngInject*/
   constructor(Users) {
     this.message = 'Hello';
-    Users.loadAllUsers().then(users => { this.users = users; });
+    Users.loadAllUsers().then(users => {
+      this.users = users;
+      this.selected = this.users[0];
+    });
   }
 
   $onInit() {}
+
+  selectUser(user) {
+    this.selected = user;
+  }
 
 }
 
