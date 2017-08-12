@@ -3,13 +3,18 @@ doctype html
 div(layout='column', ng-cloak)
   //- container #1
   md-toolbar.md-toolbar-tools(layout='row')
+    md-button.md-icon-button(hide-gt-sm, ng-click='vm.toggleList()')
+      md-icon menu
     h1 Angular Material -- Starter App
 
   //- container #2
   div(layout='row', flex)
 
     //- container #3
-    md-sidenav.md-whiterframe-4dp(md-is-locked-open='true')
+    md-sidenav.md-whiterframe-4dp(
+      md-is-locked-open='$mdMedia("gt-sm")'
+      md-component-id='left'
+    )
       md-list
         md-list-item(ng-repeat='user in vm.users')
           md-button(

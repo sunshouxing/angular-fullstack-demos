@@ -8,8 +8,9 @@ import usersService from './services/users/users.service';
 
 export class UserController {
   /*@ngInject*/
-  constructor(Users) {
-    this.message = 'Hello';
+  constructor(Users, $mdSidenav) {
+    this.$mdSidenav = $mdSidenav;
+
     Users.loadAllUsers().then(users => {
       this.users = users;
       this.selected = this.users[0];
@@ -20,6 +21,10 @@ export class UserController {
 
   selectUser(user) {
     this.selected = user;
+  }
+
+  toggleList() {
+    this.$mdSidenav('left').toggle();
   }
 
 }
