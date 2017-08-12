@@ -1,1 +1,26 @@
-div This is the user view.
+doctype html
+
+div(layout='column', ng-cloak)
+  //- container #1
+  md-toolbar.md-toolbar-tools(layout='row')
+    h1 Angular Material -- Starter App
+
+  //- container #2
+  div(layout='row', flex)
+
+    //- container #3
+    md-sidenav.md-whiterframe-4dp(md-is-locked-open='true')
+      md-list
+        md-list-item
+          md-button
+            md-icon face
+            | Lia Luogo
+
+        md-list-item
+          md-button
+            md-icon face
+            | Lawrence Ray
+
+    //- container #4
+    md-content#content(flex)
+      | Content
