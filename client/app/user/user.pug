@@ -29,3 +29,7 @@ div(layout='column', ng-cloak)
       md-icon.avatar(md-svg-icon='{{vm.selected.avatar}}')
       h2 {{vm.selected.name}}
       | {{vm.selected.content}}
+
+      md-button.md-fab.md-fab-bottom-right(ng-click='vm.share($event)')
+        md-icon share
+

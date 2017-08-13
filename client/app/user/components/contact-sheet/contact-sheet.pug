@@ -1,0 +1,14 @@
+doctype html
+
+md-bottom-sheet.md-list.md-has-header
+  md-subheader(ng-cloak)
+    | Contact
+    span.name {{vm.user.name}}
+  md-list(ng-cloak)
+    md-list-item(ng-repeat='item in vm.items')
+      md-button.md-list-item-content(
+        ng-click='vm.contactWith(item.name)'
+        md-autofocus='$index == 2'
+      )
+        md-icon(md-svg-icon='{{item.icon}}')
+        span.md-inline-list-icon-label {{item.name}}
